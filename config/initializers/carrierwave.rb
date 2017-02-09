@@ -48,3 +48,5 @@ end
 unless OpenProject::Configuration.fog_credentials.empty?
   CarrierWave::Configuration.configure_fog!
 end
+
+CarrierWave::SanitizedFile.sanitize_regexp = /[^[:word:]\.\-\+]/
